@@ -60,6 +60,6 @@ name = os.path.dirname("C:/Users/top/PycharmProjects/a_4.py")	#C:/Users/top/Pych
 #其他
 now = datetime.datetime.now()#当前时间
 
-
+watch -n 1 nvidia-smi
 
 
