@@ -6,4 +6,10 @@ int nCount = count_if(vecValue.begin(), vecValue.end(), [nNum](int val) {return 
 
 弧度=角度*pi/180
 
+max=a>b?a:b;
+
 for (map<int, vector<cv::Point>>::iterator it = labelPtMap.begin(); it != labelPtMap.end(); it++)
+sort(vecVal.begin(), vecVal.end(), greater<int>());	
+vector<int> vecHist0 = vector<int>{ vecImageScore.begin(), vecImageScore.end() };
+if (find(vecClsColor.begin(), vecClsColor.end(), strColorResult) == vecClsColor.end())
+	
