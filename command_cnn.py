@@ -13,7 +13,10 @@ pip install tensorboard
 pip install pillow
 conda create --name mmlab python=3.6
 conda create -n pytorch-gpu python==3.7.6
-conda create -n detectron2 python==3.6.13
+conda create -n detectron2wang python==3.6.13
+conda create -n paddle python==3.6.13
+conda create -n wanglei --clone AAA
+
 conda remove -n pytorch-cpu --all
 conda remove -n detectron2 --all
 conda install torchvision -c pytorch
@@ -25,40 +28,30 @@ help()
 dir()
 tensorboard --logdir=Test9_efficientNet/logs
 tensorboard --logdir=Pytorch-UNet/runs/May23_13-08-53_10120200200097LR_0.0001_BS_1_SCALE_0.5
-
 torch.cuda.is_available()
-
-D:\3rdPartyLib\OpenCV\opencv-4.5.0-vc14_vc15\source   s\samples\dnn 
-python tf_text_graph_ssd.py 
---input D:\ModelZoo\ssd_inception_v2_coco_2017_11_17\frozen_inference_graph.pb 
---output D:\ModelZoo\ssd_inception_v2_coco_2017_11_17\Ha.pbtxt 
---config D:\ModelZoo\models-master\research\object_detection\samples\configs\ssd_mobilenet_v1_coco.config
-
 python app.py db init
 python app.py db migrate
 python app.py db upgrade
-
 python app.py runserver
-
 nvcc --version
 
 
+sudo cp cuda/targets/ppc64le-linux/include/cudnn.h    /usr/local/cuda-11.0/include
+sudo cp cuda/targets/ppc64le-linux/lib/libcudnn*    /usr/local/cuda-11.0/lib64
+sudo chmod a+r /usr/local/cuda-11.0/include/cudnn.h   /usr/local/cuda-11.0/lib64/libcudnn*
+
+sudo ln -s /home/haoluo/Downloads/cuda/lib64/libcudnn.so.7.6.4 libcudnn.so
+sudo ln -s /home/haoluo/anaconda3/lib/libcublas.so.10.2.1.243 libcublas.so
+sudo ln -s /home/wang/deeplearning-suite/cuda/targets/ppc64le-linux/lib/libcudnn.so.8.0.2 libcudnn.so
+sudo ln -s /home/haoluo/anaconda3/lib/libcublas.so.10.2.1.243 libcublas.so
 
 
-cd ./deeplearning-suite/pycharm-professional-2021.1.1/pycharm-2021.1.1/bin
-sh pycharm.sh
 
 
-#文件操作
-for i, line in enumerate(open(args.labels).readlines()):	#读取文本每行内容
-if osp.exists("") is None:#文件夹不存在创建
-	os.makedirs("")
-label_files = glob.glob(osp.join(args.input_dir, "*.json"))	#获取文件夹下所有json文件，list
-name = os.path.basename("C:/Users/top/PycharmProjects/a_4.py")	#a_4.py
-name = os.path.dirname("C:/Users/top/PycharmProjects/a_4.py")	#C:/Users/top/PycharmProjects
 
-#其他
-now = datetime.datetime.now()#当前时间
+
+
+
 
 
 
