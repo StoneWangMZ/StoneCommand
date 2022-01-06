@@ -38,6 +38,11 @@ plt.subplot(1, 1, 1)
 plt.title('PIL')
 plt.imshow(img)
 plt.show()#show
+#图片格式转换
+image_array = np.asarray(image_PIL) # PIL转换为NumPy
+image_PIL = Image.fromarray(image_array.astype('uint8')) # NumPy转换为PIL
+image_tensor = torch.from_numpy(image_array) # NumPy转换为Tensor
+image_array = image_tensor.numpy() # Tensor转换为NumPy
 #array与list格式转换，如点集
 array_points = np.array(list_points)
 list_points = array_points.tolist()
@@ -52,6 +57,8 @@ cv2.imshow('show', vis.get_image()[:, :, ::-1])
 _,sample_num = subprocess.getstatusoutput("ls /data/myue/SXT_detect/coco/train2017/ -l | grep 'jpg' | wc -l") 
 # 字符串format
 "{}_predict_done.txt".format(model_id)
+'鸭舌标签 {0} 与 上盖标签 {1} 不一致'.format(ducklabelSN, lidlabelSN)
+
 # 关于时间日期
 now = datetime.datetime.now()#当前时间
 # 指定训练的GPU
@@ -71,7 +78,8 @@ for index in range(len(points)):
 import sys
 print(sys.path)
 
-检测结果日志：10.188.67.221/data/aihuishou/data/log/box_task_web_service
+
+
 
 
 

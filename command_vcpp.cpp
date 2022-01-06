@@ -12,4 +12,9 @@ for (map<int, vector<cv::Point>>::iterator it = labelPtMap.begin(); it != labelP
 sort(vecVal.begin(), vecVal.end(), greater<int>());	
 vector<int> vecHist0 = vector<int>{ vecImageScore.begin(), vecImageScore.end() };
 if (find(vecClsColor.begin(), vecClsColor.end(), strColorResult) == vecClsColor.end())
-	
+
+
+
+
+
+

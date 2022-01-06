@@ -34,6 +34,7 @@ sudo systemctl restart docker #重启docker服务后，退出连接重新登录s
 # 在阿里云创建docker私有仓库 https://blog.csdn.net/lingdi2000/article/details/109694285
 
 watch -n 1 nvidia-smi
+cd /usr/local/ # 查看cuda版本
 
 cd /    # 回到主目录nvid
 df -h   # 10进制显示磁盘情况
@@ -75,6 +76,11 @@ docker ps | grep $2"-deploy"|awk '{print $1}'
 docker ps -a |grep  box-l1-l2-front-defect-hh-1-deploy |awk '{print $1}' | tail  -n +3
 
 
+# mmsegmentation安装
+conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10.2 -c pytorch
+pip install mmcv
+pip install mmsegmentation
+pip install mmcv-full
 
 
 
